@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reader App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Toolbar -->
+    <header class="toolbar">
+      <button id="loadDocument" class="toolbar-button">📂 Load Document</button>
+      <button id="deleteDocument" class="toolbar-button">🗑️ Delete</button>
+      <button id="settings" class="toolbar-button">⚙️ Settings</button>
+    </header>
+
+    <!-- Main App Content -->
+    <div class="content">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Documents</h2>
+        <div class="document-list">
+          <!-- Placeholder for dynamically added documents -->
+          <div class="document-item">
+            <!-- <img src="document_icon.png" alt="Document Thumbnail"> -->
+            <!-- <p>Document Title</p> -->
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Reader -->
+      <main class="reader">
+        <div id="readerContent" class="reader-container">
+          <p>This is an example sentence in your document.</p>
+          <p>Another sentence follows here.</p>
+        </div>
+        <button id="closeButton" class="close-button">×</button>
+
+        <div id="explanationView" class="explanation-container">
+          <!-- Explanation content will be rendered here -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

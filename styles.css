@@ -1,0 +1,143 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Toolbar Styling */
+.toolbar {
+  position: fixed; /* Fix the toolbar at the top of the screen */
+  top: 0; /* Position it at the top of the page */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make the toolbar stretch across the full width of the screen */
+  display: flex; /* Keep the flex layout */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Vertically center the items */
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  padding: 10px; /* Add some padding around the content */
+  z-index: 1000; /* Make sure it stays above the rest of the content */
+}
+
+
+.toolbar-button {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Content Area */
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding-top: 30px;
+  padding-left: 10px;
+  overflow-y: auto;
+}
+
+.document-list {
+  margin-top: 10px;
+}
+
+/* Reader Container */
+.reader-container {
+  width: 21cm; /* A4 width */
+  max-height: calc(100vh - 100px); /* Adjust for toolbar height */
+  margin: 20px; /* Center it horizontally */
+  padding: 2cm; /* Space around the content */
+  background-color: #ffffff; /* White background for document */
+  border: 1px solid #ccc; /* Light border to simulate paper edge */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow-y: auto; /* Enable vertical scrolling */
+  font-family: "Georgia", serif; /* Readable font */
+  font-size: 12pt; /* Standard font size */
+  line-height: 1.5; /* Comfortable line spacing */
+  color: #333; /* Text color */
+  page-break-inside: avoid; /* Prevent breaking inside this container */
+  position: relative; /* For watermark positioning */
+}
+/* Explanation container */
+.explanation-container {
+  position: absolute; /* Position it above the content */
+  top: 100px; /* Adjust top position */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  background-color: #f9f9f9; /* Slightly different background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Dialog-like shadow */
+  width: 80%;
+  max-height: 200px; /* Limit height */
+  overflow-y: auto; /* Scroll if content exceeds height */
+  font-family: "Arial", sans-serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  color: #555;
+  display: none; /* Initially hidden */
+  z-index: 10; /* Above the main content */
+}
+
+.close-button {
+  position: absolute;
+  top: 90px; /* Adjust based on your design */
+  left: 75px; /* Adjust based on your design */
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff4d4d; /* Red button for close */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 11; /* Ensure it appears above content */
+}
+
+/* Optional hover effect */
+.close-button:hover {
+  background-color: #e60000; /* Darker red */
+}
+
+.reader {
+  position: relative;
+}
+
+/* Paragraphs within the reader */
+.reader-container p {
+  margin-bottom: 1rem; /* Space between paragraphs */
+  text-align: justify; /* Align text for a cleaner look */
+}
+
+/* A subtle watermark background for realism (optional) */
+.reader-container::before {
+  content: "DRAFT"; /* Example watermark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: rgba(200, 200, 200, 0.2); /* Light, transparent text */
+  pointer-events: none; /* Do not interfere with interactions */
+}
+
